@@ -1,0 +1,15 @@
+server:
+  port: 56000
+
+spring:
+  application:
+    name: nacos-restful-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+#对这个服务进行指定的轮询访问方式
+nacos-restful-provider:
+  ribbon:
+    NFLoadbalancerRuleClassName: com.netflix.loadbalancer.RandomRule
