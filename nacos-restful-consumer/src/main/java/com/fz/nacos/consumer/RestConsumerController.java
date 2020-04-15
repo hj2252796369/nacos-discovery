@@ -1,5 +1,6 @@
 package com.fz.nacos.consumer;
 
+import com.fz.service1.api.service.IService1ApiService;
 import com.fz.service2.api.service.api.IService2ApiService;
 import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,4 +58,13 @@ public class RestConsumerController {
 
     }
 
+
+    @Reference
+    private IService1ApiService service1ApiService;
+    @GetMapping("/service1")
+    public String service1(){
+        String resultString = service1ApiService.dubboService1();
+        return "Dubbo Nacos Consumer ||  " + resultString;
+
+    }
 }

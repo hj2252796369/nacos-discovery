@@ -8,5 +8,9 @@ package com.fz.service2.api.service.api;
  * @create_date 21:57 2020-04-15
  */
 public interface IService2ApiService {
+    /**
+     * 测试调用dubbos
+     * @return
+     */
     public String dubboService2();
 }

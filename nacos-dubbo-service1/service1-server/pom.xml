@@ -3,15 +3,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.example</groupId>
-        <artifactId>nacos-discovery</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <groupId>com.fz</groupId>
+        <artifactId>nacos-dubbo-service1</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.fz</groupId>
-    <artifactId>nacos-restful-consumer</artifactId>
+    <artifactId>service1-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>nacos-restful-consumer</name>
+    <name>service1-server</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -21,19 +21,17 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter</artifactId>
         </dependency>
 
-        <!-- 服务发现的客户端。1、将自己的地址注册到服务发现中心，2、从服务发现中心获取服务列表-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-dubbo</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.fz</groupId>
-            <artifactId>service2-api</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
@@ -43,8 +41,9 @@
         </dependency>
 
         <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-dubbo</artifactId>
+            <groupId>com.fz</groupId>
+            <artifactId>service2-api</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>

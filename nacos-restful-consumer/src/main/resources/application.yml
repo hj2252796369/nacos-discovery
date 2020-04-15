@@ -8,6 +8,7 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
+        namespace: 756fb032-ad31-44d5-8042-7244ae71bd03
 
 #对这个服务进行指定的轮询访问方式
 nacos-restful-provider:
