@@ -1,5 +1,7 @@
 package com.fz.nacos.consumer;
 
+import com.fz.service2.api.service.api.IService2ApiService;
+import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
@@ -43,6 +45,16 @@ public class RestConsumerController {
         String forObject = restTemplate.getForObject(uri + "/provider/hello", String.class);
 
         return "Consumer Nacos===========" + forObject;
+    }
+
+    @Reference
+    private IService2ApiService service2ApiService;
+
+    @GetMapping("/service2")
+    public String service2(){
+        String resultString = service2ApiService.dubboService2();
+        return "Dubbo Nacos Consumer ||  " + resultString;
+
     }
 
 }

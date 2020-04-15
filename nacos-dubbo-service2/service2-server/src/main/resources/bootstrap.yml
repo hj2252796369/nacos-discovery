@@ -1,0 +1,24 @@
+server:
+  port: 54100
+spring:
+  application:
+    name: service2-server
+  main:
+    allow-bean-definition-overriding: true  # Spring Boot 2.1需要设定   当类名重复时，进行覆盖操作
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+dubbo:
+  protocol:
+    #协议名称
+    name: dubbo
+    port: 20800
+  registry:
+    address: nacos://127.0.0.1:8848
+  application:
+    qos-enable: false #dubbo运维服务是否开启
+  consumer:
+    check: false #启动时就检查依赖的服务
+  scan:
+    base-packages: com.fz.service2.server.service
