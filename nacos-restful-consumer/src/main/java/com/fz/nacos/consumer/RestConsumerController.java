@@ -64,6 +64,7 @@ public class RestConsumerController {
     @GetMapping("/service1")
     public String service1(){
         String resultString = service1ApiService.dubboService1();
+        System.out.println("Consumer===========");
         return "Dubbo Nacos Consumer ||  " + resultString;
 
     }
